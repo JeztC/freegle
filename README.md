@@ -1,7 +1,8 @@
 ![Alt text](src/assets/img.png)
 
-# FREEGLE
+# Freegle
+Freegle is abbreviation of *Free Google*
 
-A free and open source version of Google that doesn't include corporation censorship
-and includes the initial source of web pages.
+Freegle is free and open source version of Google search engine that doesn't include censorship
+and includes all web pages without needing to go next or previous page.
 
