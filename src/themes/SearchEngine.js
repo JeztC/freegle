@@ -137,7 +137,6 @@ const SearchEngine = () => {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        bgcolor: '#fff',
                         overflowY: 'auto',
                         p: { xs: 2, sm: 4 },
                         zIndex: 1000
@@ -163,9 +162,9 @@ const SearchEngine = () => {
                             </Box>
 
                             <Tabs value={activeTab} onChange={handleTabChange} sx={{ mb: 3 }}>
-                                <Tab label="All" sx={{ textTransform: 'none', color: '#4d5156', '&.Mui-selected': { color: '#e65100' } }} />
-                                <Tab label="Web" sx={{ textTransform: 'none', color: '#4d5156', '&.Mui-selected': { color: '#e65100' } }} />
-                                <Tab label="Images" sx={{ textTransform: 'none', color: '#4d5156', '&.Mui-selected': { color: '#e65100' } }} />
+                                <Tab label="All" sx={{ textTransform: 'none', '&.Mui-selected': { color: '#e65100' } }} />
+                                <Tab label="Web" sx={{ textTransform: 'none', '&.Mui-selected': { color: '#e65100' } }} />
+                                <Tab label="Images" sx={{ textTransform: 'none', '&.Mui-selected': { color: '#e65100' } }} />
                             </Tabs>
 
                             {activeTab === 0 && renderResults(searchResults.all)}
