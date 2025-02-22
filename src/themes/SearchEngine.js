@@ -83,7 +83,7 @@ const SearchEngine = () => {
                 <Typography variant="caption" sx={{ color: '#006621', display: 'block', mb: 1 }}>
                     {result.url}
                 </Typography>
-                <Typography variant="body1" sx={{ color: '#4d5156' }}>
+                <Typography variant="body1">
                     {result.description}
                 </Typography>
             </Box>
@@ -130,7 +130,7 @@ const SearchEngine = () => {
                 </Box>
             </Fade>
             {searchResults && (
-                <Slide direction="up" in={!isTransitioning} timeout={500}>
+                <Fade in={!isTransitioning} timeout={500}>
                     <Box sx={{
                         position: 'fixed',
                         top: 0,
@@ -143,7 +143,7 @@ const SearchEngine = () => {
                     }}>
                         <Box sx={{ maxWidth: '800px', mx: 'auto' }}>
                             <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, flexWrap: 'wrap', gap: 2 }}>
-                                <img src={logo} alt="Search Logo" style={{ maxWidth: '120px', height: 'auto', mr: 2 }} />
+                                <img src={logo} onClick={handleBackToSearch} alt="Search Logo" style={{ maxWidth: '120px', height: 'auto', mr: 2 }} />
                                 <TextField
                                     placeholder="Search with Freegle..."
                                     variant="outlined"
@@ -178,7 +178,7 @@ const SearchEngine = () => {
                             </Button>
                         </Box>
                     </Box>
-                </Slide>
+                </Fade>
             )}
             <Box sx={{ p: 2, textAlign: 'center', bgcolor: '#f2f2f2', color: '#4d5156' }}>
                 <Typography variant="caption">
