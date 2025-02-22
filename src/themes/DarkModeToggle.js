@@ -13,7 +13,10 @@ export const DarkModeToggle = () => {
 
     return (
         <IconButton
-            sx={{ ml: 1, marginBottom: '10px' }}
+            sx={{
+                marginLeft: 'auto', // Pushes button to the right
+                marginBottom: '10px'
+            }}
             onClick={toggleMode}
             color="secondary"
         >

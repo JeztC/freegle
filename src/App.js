@@ -4,6 +4,8 @@ import {ThemeProvider} from '@mui/material/styles';
 import {ThemeContext} from './themes/theme-context';
 import {darkTheme, lightTheme} from "./themes/theme-context";
 import SearchEngine from "./themes/SearchEngine";
+import {DarkModeToggle} from "./themes/DarkModeToggle";
+import Header from "./themes/Header";
 
 const App = () => {
   const initialTheme = localStorage.getItem('mode') === 'light' ? lightTheme : darkTheme;
@@ -26,6 +28,7 @@ const App = () => {
         <ThemeContext.Provider value={{ theme, toggleMode }}>
           <CssBaseline />
           <Fragment>
+            <Header/>
             <SearchEngine/>
           </Fragment>
         </ThemeContext.Provider>
