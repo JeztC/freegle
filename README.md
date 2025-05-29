@@ -1,5 +1,3 @@
-![Alt text](src/assets/img.png)
-
 # Freegle
 Freegle is abbreviation of *Free Google*
 
