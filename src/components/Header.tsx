@@ -1,7 +1,7 @@
-import {DarkModeToggle} from "./DarkModeToggle";
 import {IconButton, Menu, MenuItem, styled} from "@mui/material";
 import {useState} from "react";
 import LanguageIcon from '@mui/icons-material/Language';
+import {DarkModeToggle} from "./DarkModeToggle";
 
 const LanguageMenuItem = styled(MenuItem)`
   width: 200px;
@@ -10,7 +10,7 @@ const LanguageMenuItem = styled(MenuItem)`
 const Header = () => {
     const [languageMenuAnchor, setLanguageMenuAnchor] = useState(null);
 
-    const handleLanguageMenuOpen = (event) => {
+    const handleLanguageMenuOpen = (event : any) => {
         setLanguageMenuAnchor(event.currentTarget);
     };
 
@@ -18,16 +18,16 @@ const Header = () => {
         setLanguageMenuAnchor(null);
     };
 
-    const handleLanguageChange = (language) => {
+    const handleLanguageChange = (language : string) => {
         //i18n.changeLanguage(language); // Assuming i18n is globally available
         handleLanguageMenuClose();
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'right', marginRight: '10px' }}>
             <DarkModeToggle/>
             <IconButton color="secondary" onClick={handleLanguageMenuOpen} style={{ marginBottom : '10px' }}>
-                <LanguageIcon style={{ fontSize: '25px' }}/>
+                <LanguageIcon style={{ fontSize: '32px' }}/>
             </IconButton>
             <Menu
                 anchorEl={languageMenuAnchor}
