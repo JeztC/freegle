@@ -1,7 +1,7 @@
 import {Box, Button, InputAdornment, Tab, Tabs, TextField} from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import RenderResults from "./RenderResults";
-import React from "react";
+import * as React from "react";
 
 interface ResultsProps {
     logo: string;

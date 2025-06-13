@@ -1,10 +1,10 @@
 import { Box, TextField, Button, Typography, InputAdornment, Fade, Tabs, Tab } from "@mui/material";
-import React, { useState } from "react";
 // @ts-ignore
-import logo from '.././assets/img.png';
+import logo from '../assets/img.png';
 import SearchIcon from '@mui/icons-material/Search';
 import Header from "./Header";
 import SearchResults from "./SearchResults";
+import {useState} from "react";
 
 export interface SearchResult {
     title: string;

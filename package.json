@@ -3,25 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/icons-material": "^6.4.1",
-    "@mui/material": "^6.4.1",
-    "axios": "^1.9.0",
     "cra-template": "1.2.0",
+    "duck-duck-scrape": "^2.2.7",
     "duckduckgo-search": "^1.0.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.3",
-    "react-scripts": "5.0.1",
-    "serpapi": "^2.1.0",
-    "typescript": "^4.9.4"
+    "express": "^5.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node_modules/.bin/react-scripts start",
+    "startServer": "npx ts-node server/index.ts",
+    "build": "node_modules/.bin/react-scripts build",
+    "test": "node_modules/.bin/react-scripts test",
+    "eject": "node_modules/.bin/react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -42,7 +34,12 @@
     ]
   },
   "devDependencies": {
+    "@eslint/js": "^9.29.0",
     "@tsconfig/create-react-app": "^2.0.5",
-    "@types/react-dom": "^19.1.6"
+    "@types/react-dom": "^19.1.6",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.2.0",
+    "typescript-eslint": "^8.34.0"
   }
 }
