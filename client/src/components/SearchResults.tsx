@@ -2,6 +2,7 @@ import {Box, Button, InputAdornment, Tab, Tabs, TextField} from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import RenderResults from "./RenderResults";
 import * as React from "react";
+import {SearchResult} from "./SearchEngine";
 
 interface ResultsProps {
     logo: string;
@@ -26,6 +27,8 @@ const SearchResults = ({
                            searchResults,
                            textFieldStyles
                        }: ResultsProps) => {
+    console.log("test");
+    console.log(activeTab);
     return (
         <Box sx={{
             display: 'flex',

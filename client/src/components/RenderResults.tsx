@@ -2,6 +2,7 @@ import {Box, Typography} from "@mui/material";
 import {SearchResult} from "./SearchEngine";
 
 const RenderResults = (results : Array<SearchResult>) => {
+    console.log(results);
     return (
         results.map((result, index) => (
             <Box key={index} sx={{ mb: 4 }}>

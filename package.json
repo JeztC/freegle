@@ -4,13 +4,13 @@
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
+    "dotenv": "^16.5.0",
     "duck-duck-scrape": "^2.2.7",
     "duckduckgo-search": "^1.0.7",
     "express": "^5.1.0"
   },
   "scripts": {
-    "start": "node_modules/.bin/react-scripts start",
-    "startServer": "npx ts-node server/index.ts",
+    "start": "npx ts-node server/index.ts",
     "build": "node_modules/.bin/react-scripts build",
     "test": "node_modules/.bin/react-scripts test",
     "eject": "node_modules/.bin/react-scripts eject"

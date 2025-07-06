@@ -4,7 +4,8 @@ import logo from '../assets/img.png';
 import SearchIcon from '@mui/icons-material/Search';
 import Header from "./Header";
 import SearchResults from "./SearchResults";
-import {useState} from "react";
+import {ChangeEvent, useState} from "react";
+import { search } from 'duck-duck-scrape';
 
 export interface SearchResult {
     title: string;
@@ -14,7 +15,7 @@ export interface SearchResult {
 
 const SearchEngine = () => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null);
+    const [searchResults, setSearchResults] = useState<typeof exampleSearches | null>(null);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [activeTab, setActiveTab] = useState(0);
 
@@ -38,7 +39,7 @@ const SearchEngine = () => {
         ]
     };
 
-    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
         setSearchQuery(event.target.value);
     };
 
@@ -46,12 +47,8 @@ const SearchEngine = () => {
         if (!searchQuery.trim()) return;
 
         setIsTransitioning(true);
-        const results = activeTab === 0 ? exampleSearches.all :
-            activeTab === 1 ? exampleSearches.web :
-                activeTab === 2 ? exampleSearches.images :
-                    exampleSearches.memes;
         setTimeout(() => {
-            setSearchResults(results);
+            setSearchResults(exampleSearches);
             setActiveTab(0); // Default to "All" tab
             setIsTransitioning(false);
         }, 300);
@@ -77,11 +74,7 @@ const SearchEngine = () => {
         // Update searchResults based on the new tab
         setIsTransitioning(true);
         setTimeout(() => {
-            const results = newValue === 0 ? exampleSearches.all :
-                newValue === 1 ? exampleSearches.web :
-                    newValue === 2 ? exampleSearches.images :
-                        exampleSearches.memes;
-            setSearchResults(results);
+            setSearchResults(exampleSearches);
             setIsTransitioning(false);
         }, 300);
     };
@@ -90,11 +83,15 @@ const SearchEngine = () => {
         '& .MuiOutlinedInput-root': {
             borderRadius: '24px',
             boxShadow: '0 1px 6px rgba(242, 140, 56, 0.28)',
+            backgroundColor: '#ffffff', // White background in all modes
             '&:hover fieldset': { border: '2px solid #ef6c00' },
             '&.Mui-focused fieldset': { border: '2px solid #e65100' },
-            '& fieldset': { borderColor: '#fb8c00' }
+            '& fieldset': { borderColor: '#fb8c00' },
+            '& .MuiInputBase-input': {
+                color: (theme) => (theme.palette.mode === 'dark' ? '#000000' : 'inherit') // Black text in dark mode, default otherwise
+            }
         },
-    };
+    }
 
     return (
         <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -137,7 +134,7 @@ const SearchEngine = () => {
                             <Button
                                 variant="contained"
                                 onClick={() => setSearchQuery('')}
-                                sx={{ bgcolor: '#ffcc80', color: '#4a2c00', '&:hover': { bgcolor: '#ffb74d' } }}
+                                sx={{ bgcolor: '#fb8c00', color: '#fff', '&:hover': { bgcolor: '#ef6c00' } }}
                             >
                                 Clear
                             </Button>
